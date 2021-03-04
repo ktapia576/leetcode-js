@@ -79,10 +79,12 @@ var subsets = function(nums) {
         
         recurse(depth+1,arr); // keep same array
         
-        let newArr = arr.slice(); // create copy of old array
-        newArr.push(nums[depth]); // add new element to array
+        // let newArr = arr.slice(); // create copy of old array
+        // newArr.push(nums[depth]); // add new element to array
         
-        recurse(depth+1,newArr); // pass newArr with added element to recursion
+        // recurse(depth+1,newArr); // pass newArr with added element to recursion
+
+        recurse(depth+1,[...arr, nums[depth]]); // pass a new array with copy of old array plus the new element
     }
     
     recurse(0, []);
